@@ -4,8 +4,8 @@
 #include "tensorflow/lite/experimental/micro/micro_interpreter.h"
 #include "tensorflow/lite/schema/schema_generated.h"
 #include "tensorflow/lite/version.h"
-#include "mnist.h"
 #include "model.h"
+#include "mnist.h"
 
 // Globals
 const tflite::Model* model = nullptr;
@@ -89,6 +89,6 @@ void loop() {
   float* result = output->data.f;
   reporter->Report( "It looks like the number: %d", std::distance( result, std::max_element( result, result + 10 ) ) );
 
-  // Wait 1-sec til before runing again
+  // Wait 1-sec til before running again
   delay( 1000 );
 }
